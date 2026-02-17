@@ -1,1 +1,176 @@
-hello!
+<html>
+
+<head>
+    <title>Grammy Nominee Filter</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 20px;
+            height: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 18px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .all {
+            background: #264653;
+            color: #fff;
+        }
+
+        .record {
+            background: #6188f4;
+            color: #fff;
+        }
+
+        .album {
+            background: #ed6fd0;
+            color: #fff;
+        }
+
+        .song {
+            background: #e76f51;
+            color: #fff;
+        }
+
+        .item {
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 20px;
+            border-radius: 5px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .all.item {
+            background: #264653;
+            color: #fff;
+        }
+
+        .record.item {
+            background: #6188f4;
+        }
+
+        .album.item {
+            background: #ed6fd0;
+        }
+
+        .song.item {
+            background: #e76f51;
+        }
+
+        .item.hidden {
+            display: none;
+        }
+
+        .instructions {
+            margin-bottom: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #heading {
+            margin: 10px 0 15px 0;
+            font-size: 22px;
+            font-weight: 600;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="instructions">
+        Click the buttons to explore nominees from the Big Three General Field Grammy categories: Record of the Year,
+        Album of the Year, and Song of the Year. Select "All" to see a complete list of nominated artists.
+    </div>
+
+    <h3 id="heading"></h3>
+
+    <button onclick="filter('all')">All</button>
+    <button onclick="filter('record')">Record of the Year</button>
+    <button onclick="filter('album')">Album of the Year</button>
+    <button onclick="filter('song')">Song of the Year</button>
+
+    <div class="item all">Bad Bunny</div>
+    <div class="item all">Sabrina Carpenter</div>
+    <div class="item all">Doechii</div>
+    <div class="item all">Billie Eilish</div>
+    <div class="item all">Lady Gaga</div>
+    <div class="item all">Kendrick Lamar</div>
+    <div class="item all">SZA</div>
+    <div class="item all">Chappell Roan</div>
+    <div class="item all">ROSÉ</div>
+    <div class="item all">Bruno Mars</div>
+    <div class="item all">Justin Bieber</div>
+    <div class="item all">Clipse</div>
+    <div class="item all">Leon Thomas</div>
+    <div class="item all">Tyler, The Creator</div>
+    <div class="item all">HUNTR/X</div>
+
+    <div class="item record">Bad Bunny</div>
+    <div class="item record">Sabrina Carpenter</div>
+    <div class="item record">Doechii</div>
+    <div class="item record">Billie Eilish</div>
+    <div class="item record">Lady Gaga</div>
+    <div class="item record">Kendrick Lamar</div>
+    <div class="item record">SZA</div>
+    <div class="item record">Chappell Roan</div>
+    <div class="item record">ROSÉ</div>
+    <div class="item record">Bruno Mars</div>
+
+
+    <div class="item album">Bad Bunny</div>
+    <div class="item album">Justin Bieber</div>
+    <div class="item album">Sabrina Carpenter</div>
+    <div class="item album">Clipse</div>
+    <div class="item album">Lady Gaga</div>
+    <div class="item album">Kendrick Lamar</div>
+    <div class="item album">Leon Thomas</div>
+    <div class="item album">Tyler, The Creator</div>
+
+    <div class="item song">Bad Bunny</div>
+    <div class="item song">Sabrina Carpenter</div>
+    <div class="item song">Doechii</div>
+    <div class="item song">Billie Eilish</div>
+    <div class="item song">Lady Gaga</div>
+    <div class="item song">Kendrick Lamar</div>
+    <div class="item song">SZA</div>
+    <div class="item song">HUNTR/X</div>
+    <div class="item song">ROSÉ</div>
+    <div class="item song">Bruno Mars</div>
+
+    <script>
+        function filter(cat) {
+            let items = document.querySelectorAll('.item');
+            let heading = document.getElementById('heading');
+
+            if (cat === 'all') {
+                heading.textContent = "All Nominated Artists";
+            }
+            if (cat === 'record') {
+                heading.textContent = "Record of the Year Nominees";
+            }
+            if (cat === 'album') {
+                heading.textContent = "Album of the Year Nominees";
+            }
+            if (cat === 'song') {
+                heading.textContent = "Song of the Year Nominees";
+            }
+
+            items.forEach(item => {
+                if (item.classList.contains(cat)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        filter('all');
+    </script>
+</body>
+
+</html>
