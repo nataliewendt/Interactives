@@ -1,0 +1,30 @@
+h1{
+    color:purple;
+}
+
+#intro{
+    font-size: 1em;
+}
+
+#byline{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#content{
+    width:50%;
+    margin:auto;
+}
+
+/* for phones*/
+@media (orientation: portrait) {
+    #content {
+        width: 100%;
+        font-size: 2em;
+    }
+}
+
+div{
+    border: solid 0px
+    gray;
+}
